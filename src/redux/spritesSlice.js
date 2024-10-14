@@ -88,10 +88,14 @@ const spritesSlice = createSlice({
             const sprite = state.sprites.find((s) => s.id === state.selectedSpriteId);
             const { index, field, value } = action.payload;
             sprite.actions[index]['payload'][field] = value
-        }
+        },
+        importSprites: (state, action) => {
+            state.sprites = action.payload;
+            state.selectedSpriteId = action.payload[0]?.id || null;
+        },
     },
 });
 
-export const { addSprite, selectSprite, updateActionValue, toggleCollision, resetCollisionHandled, deleteAction, checkCollisionAndSwap, goTo, move, rotate, updateRepeatPayload, addActionToSprite, playAllSprites } = spritesSlice.actions;
+export const { addSprite, selectSprite, updateActionValue, toggleCollision, resetCollisionHandled, deleteAction, checkCollisionAndSwap, goTo, move, rotate, updateRepeatPayload, addActionToSprite, playAllSprites, importSprites } = spritesSlice.actions;
 
 export default spritesSlice.reducer;

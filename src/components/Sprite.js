@@ -2,7 +2,6 @@ import React, { useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import CatSprite from '../sprites/CatSprite';
 import DogSprite from '../sprites/DogSprite';
-import BirdSprite from '../sprites/BirdSprite';
 import { selectSprite } from '../redux/spritesSlice';
 import { SPRITE_HEIGHT, SPRITE_WIDTH } from '../constants/sprites';
 
